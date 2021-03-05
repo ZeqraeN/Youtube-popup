@@ -1,0 +1,224 @@
+*{
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.youtubetakip {
+  width: 900px;
+  float: left;
+  position: absolute;
+  height: 150px;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: -150px;
+  background: #FAFAFA;
+  pointer-events: none;
+  animation: 12s yt;
+  animation-fill-mode: forwards;
+}
+.takipalan {
+  width: 100%;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.avatar {
+  width: 105px;
+  height: 105px;
+  overflow: hidden;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.isim {
+  margin-left: 20px;
+}
+.isim p{
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+}
+.isim b{
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  color: rgba(0,0,0,0.55);
+}
+
+.buton {
+  margin-left: auto;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  overflow: hidden;
+}
+.butonbaslik{
+  width: 150px;
+  height: 40px;
+  float: left;
+  background: #CC0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  animation: 12s bbaslik;
+  animation-fill-mode: forwards;
+}
+.butonbaslik::before{
+  content: "ABONE OL";
+  animation: 12s before;
+  animation-fill-mode: forwards;
+}
+
+.bildirim {
+  width: 0;
+  height: 40px;
+  float: left;
+  background: url(bildirimp.png) center center no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  animation: 12s bildirim;
+  animation-fill-mode: forwards;
+}
+
+.mouse {
+  width: 25px;
+  height: 25px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.40);
+  position: absolute;
+  bottom: -25px;
+  left: 250px;
+  z-index: 9;
+  animation: 12s mouse;
+  animation-fill-mode: forwards;
+}
+@keyframes mouse{
+  0%, 10%{
+    left: 450px;
+    bottom: -25px;
+  }
+  15%{
+    left: 350px;
+    bottom: 45px;
+  }
+  25%{
+    left: 780px;
+    bottom: 62px;
+    opacity: 1;
+    width: 25px;
+    height: 25px;
+  }
+  27%, 30%{
+    left: 775px;
+    bottom: 57px;
+    opacity: 0;
+    width: 35px;
+    height: 35px;
+  }
+  30%{
+    left: 780px;
+    bottom: 62px;
+    opacity: 1;
+    width: 25px;
+    height: 25px;
+  }
+  38%{
+    left: 836px;
+    bottom: 62px;
+    opacity: 1;
+    width: 25px;
+    height: 25px;
+  }
+  40%, 100%{
+    left: 831px;
+    bottom: 57px;
+    opacity: 0;
+    width: 35px;
+    height: 35px;
+  }
+}
+@keyframes bbaslik{
+  0%, 26%{
+    background: #CC0000;
+    color: #fff;
+  }
+  28.3%{
+    background: #E1E1E1;
+    color: #6C6C6C;
+  }
+  100%{
+    background: #E1E1E1;
+    color: #6C6C6C;
+  }
+}
+@keyframes before{
+  0%, 28%{
+    content: "ABONE OL";
+  }
+  28.3%, 100%{
+    content: "ABONE OLUNDU";
+  }
+}
+@keyframes bildirim{
+  0%, 28.3%{
+    width: 0;
+  }
+  33%, 40%{
+    width: 53px;
+    background: url(bildirimp.png) center center no-repeat;
+  }
+  42%{
+    width: 53px;
+    background: url(bildirima.png) center center no-repeat;
+  }
+  100%{
+    width: 53px;
+    background: url(bildirima.png) center center no-repeat;
+  }
+}
+@keyframes yt{
+  0%{
+    bottom: -150px;
+  }
+  10%, 90%{
+    bottom: 15px;
+  }
+  100%{
+    bottom: -150px;
+  }
+}
